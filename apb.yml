@@ -1,0 +1,18 @@
+version: 1.0
+name: fail-apb
+description: This is an APB built to fail on provision or deprovision
+bindable: False
+async: optional
+metadata:
+  displayName: Fail (APB)
+plans:
+  - name: failprovision
+    description: This plan fails on provision
+    free: True
+    metadata: {}
+    parameters: []
+  - name: faildeprovision
+    description: This plan fails on deprovision
+    free: True
+    metadata: {}
+    parameters: []

@@ -1,0 +1,16 @@
+FROM ansibleplaybookbundle/apb-base
+
+LABEL "com.redhat.apb.spec"=\
+"dmVyc2lvbjogMS4wCm5hbWU6IGZhaWwtYXBiCmRlc2NyaXB0aW9uOiBUaGlzIGlzIGFuIEFQQiBi\
+dWlsdCB0byBmYWlsIG9uIHByb3Zpc2lvbiBvciBkZXByb3Zpc2lvbgpiaW5kYWJsZTogRmFsc2UK\
+YXN5bmM6IG9wdGlvbmFsCm1ldGFkYXRhOgogIGRpc3BsYXlOYW1lOiBGYWlsIChBUEIpCnBsYW5z\
+OgogIC0gbmFtZTogZmFpbHByb3Zpc2lvbgogICAgZGVzY3JpcHRpb246IFRoaXMgcGxhbiBmYWls\
+cyBvbiBwcm92aXNpb24KICAgIGZyZWU6IFRydWUKICAgIG1ldGFkYXRhOiB7fQogICAgcGFyYW1l\
+dGVyczogW10KICAtIG5hbWU6IGZhaWxkZXByb3Zpc2lvbgogICAgZGVzY3JpcHRpb246IFRoaXMg\
+cGxhbiBmYWlscyBvbiBkZXByb3Zpc2lvbgogICAgZnJlZTogVHJ1ZQogICAgbWV0YWRhdGE6IHt9\
+CiAgICBwYXJhbWV0ZXJzOiBbXQo="
+
+COPY playbooks /opt/apb/actions
+COPY roles /opt/ansible/roles
+RUN chmod -R g=u /opt/{ansible,apb}
+USER apb
